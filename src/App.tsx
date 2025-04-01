@@ -203,24 +203,39 @@ function App() {
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-2">
                   <label className="text-gray-700">Columns:</label>
-                  <input type="number" min={1} step={1} value={columns} onChange={(e) => {
-                      const value = parseInt(e.target.value);
-                      if (!isNaN(value) && value > 0) setColumns(value); setColumns(Math.max(5, Math.min(50, parseInt(e.target.value) || 15)))}
-                    className="w-20 px-2 py-1 border rounded"
-                    min="5"
-                    max="50"
-                  />
-                </div>
+                  <input
+  type="number"
+  min={1}
+  step={1}
+  value={columns}
+  onChange={(e) => {
+    const value = parseInt(e.target.value);
+    if (!isNaN(value) && value > 0) {
+      setColumns(Math.max(5, Math.min(50, value)));
+    }
+  }}
+  className="w-20 px-2 py-1 border rounded"
+  min="5"
+  max="50"
+/>
 
                 <div className="flex items-center gap-2">
                   <label className="text-gray-700">Rows:</label>
-                  <input type="number" min={1} step={1} value={rows} onChange={(e) => {
-                      const value = parseInt(e.target.value);
-                      if (!isNaN(value) && value > 0) setRows(value); setRows(Math.max(5, Math.min(50, parseInt(e.target.value) || 15)))}
-                    className="w-20 px-2 py-1 border rounded"
-                    min="5"
-                    max="50"
-                  />
+                  <input
+  type="number"
+  min={1}
+  step={1}
+  value={rows}
+  onChange={(e) => {
+    const value = parseInt(e.target.value);
+    if (!isNaN(value) && value > 0) {
+      setRows(Math.max(5, Math.min(50, value)));
+    }
+  }}
+  className="w-20 px-2 py-1 border rounded"
+  min="5"
+  max="50"
+/>
                 </div>
               </div>
 
